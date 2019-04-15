@@ -5,7 +5,7 @@ LABEL maintainer="Witold Bolt <witold.bolt@jit.team>"
 RUN apt-get update
 RUN apt-get install -y nginx git protobuf-compiler libprotobuf-dev
 RUN pip3 install uwsgi flask Cython protobuf
-RUN git clone https://github.com/houp/cld3.git
+RUN git clone https://github.com/A1aZ/cld3.git
 RUN cd cld3/src && protoc --cpp_out=. *.proto && cd .. && python3 ./setup.py install
 COPY ./app.py /app/
 WORKDIR /app
